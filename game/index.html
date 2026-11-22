@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Velvet Vault — The Meridian Gallery Heist</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="stage">
+  <header id="hud">
+    <div class="hud-left">
+      <div id="level-name">I — The Marble Hall</div>
+      <div id="objective">Steal the Crimson Star Sapphire, then reach the EXIT.</div>
+    </div>
+    <div class="hud-center">
+      <div id="alarm-label">ALARM 0%</div>
+      <div id="alarm-bar"><div id="alarm-fill" class="alarm-fill calm"></div></div>
+    </div>
+    <div class="hud-right">
+      <div id="loot-value">$0</div>
+      <div class="tool-counts"><span id="coin-count">◉ 3</span><span id="smoke-count">☁ 2</span></div>
+      <div id="timer">00:00</div>
+    </div>
+  </header>
+
+  <div id="canvas-wrap">
+    <canvas id="game-canvas" width="1280" height="664"></canvas>
+    <div id="toast"></div>
+
+    <div id="overlay-title" class="overlay visible">
+      <div class="card">
+        <h1>VELVET VAULT</h1>
+        <p class="subtitle">The Meridian Gallery Heist</p>
+        <p>You are <b>Rook</b>, a thief in a midnight coat. Three rooms stand between
+        you and the Crimson Star Sapphire — and the gallery's night watch is awake.</p>
+        <ul>
+          <li><b>Guards</b> patrol with amber vision cones. <b>Cameras</b> sweep red arcs. Stay out of both.</li>
+          <li>Being seen fills the <b>alarm meter</b>. At 100% the guards hunt you. Break line of sight to cool down.</li>
+          <li><b>Click</b> to toss a coin and pull a guard away. <b>Space</b> drops smoke. <b>Shift</b> sprints — loudly.</li>
+          <li>Press <b>E</b> beside the sapphire to lift it, then reach the <b>EXIT</b>.</li>
+        </ul>
+        <p class="call">Press Enter or click anywhere to begin the heist.</p>
+      </div>
+    </div>
+
+    <div id="overlay-caught" class="overlay">
+      <div class="card danger">
+        <h1>CAUGHT</h1>
+        <p id="caught-detail"></p>
+        <p class="call">Press R or click to try the room again.</p>
+      </div>
+    </div>
+
+    <div id="overlay-level" class="overlay">
+      <div class="card">
+        <h1>ROOM CLEARED</h1>
+        <p id="level-detail"></p>
+        <p class="call">Press Enter or click to continue.</p>
+      </div>
+    </div>
+
+    <div id="overlay-win" class="overlay">
+      <div class="card gold">
+        <h1>GETAWAY</h1>
+        <p>The sapphire is yours. The gallery never knew you were there.</p>
+        <p id="win-detail"></p>
+        <p class="call">Press R to run the heist again.</p>
+      </div>
+    </div>
+
+    <div id="overlay-paused" class="overlay">
+      <div class="card">
+        <h1>PAUSED</h1>
+        <p>Rook waits in the dark.</p>
+        <p class="call">Press P or Enter to resume.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer id="hint">WASD / arrows move · Shift sprint (loud) · C crouch · Click toss coin · Space smoke · E grab loot · P pause · M mute</footer>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
